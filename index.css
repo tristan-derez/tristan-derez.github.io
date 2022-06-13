@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
+body {
+  background: #14213d;
+}
 main {
   display: flex;
   flex-direction: column;
@@ -7,12 +10,52 @@ main {
   justify-content: center;
   height: 100vh;
   font-family: "Inter";
+  color: #f7e2e2;
 }
 
 h1 {
   font-size: 55px;
 }
 
-p {
+.hello-emoji {
   font-size: 55px;
+  cursor: crosshair;
+}
+
+.hello-emoji:before {
+  content: attr(data-hover);
+}
+
+.hello-emoji:hover {
+  animation-name: wave-animation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
